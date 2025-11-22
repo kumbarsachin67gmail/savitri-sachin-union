@@ -152,14 +152,14 @@ export const Hero = () => {
         <img
           src="/Sachin_4_hero.png"
           alt="Sachin 4 Hero"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 lg:hidden ${
             carouselIndex === 4 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin.png"
           alt="Sachin"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 md:block lg:hidden ${
             carouselIndex === 5 ? "opacity-20" : "opacity-0"
           }`}
         />
@@ -167,14 +167,14 @@ export const Hero = () => {
         <img
           src="/Sachin_5_hero.png"
           alt="Sachin 5 Hero"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 md:block lg:hidden ${
             carouselIndex === 1 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin_hero.png"
           alt="Sachin Hero"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 md:block lg:hidden ${
             carouselIndex === 2 ? "opacity-20" : "opacity-0"
           }`}
         />
@@ -188,7 +188,7 @@ export const Hero = () => {
         <img
           src="/Sachin_3_hero.png"
           alt="Sachin 3 Hero"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 md:block lg:hidden ${
             carouselIndex === 0 ? "opacity-20" : "opacity-0"
           }`}
         />
