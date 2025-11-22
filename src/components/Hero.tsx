@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Heart } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import heroPattern from "@/assets/hero-pattern.jpg";
 import { motion } from "framer-motion";
 
@@ -44,6 +50,7 @@ export const Hero = () => {
   });
 
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [openDialog, setOpenDialog] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -92,16 +99,31 @@ export const Hero = () => {
       {/* Carousel Images as background - animated one by one */}
       <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
         {/* Animated carousel using opacity transitions */}
-        <img
+        {/* <img
           src="/Savitri.png"
           alt="Savitri"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
             carouselIndex === 0 ? "opacity-20" : "opacity-0"
           }`}
+        /> */}
+        <img
+          src="/Sachin_4_hero.png"
+          alt="Sachin 4 Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 4 ? "opacity-20" : "opacity-0"
+          }`}
         />
         <img
           src="/Sachin.png"
           alt="Sachin"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 5 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+
+        <img
+          src="/Sachin_5_hero.png"
+          alt="Sachin 5 Hero"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
             carouselIndex === 1 ? "opacity-20" : "opacity-0"
           }`}
@@ -124,14 +146,14 @@ export const Hero = () => {
           src="/Sachin_3_hero.png"
           alt="Sachin 3 Hero"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 4 ? "opacity-20" : "opacity-0"
+            carouselIndex === 0 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/assets/hero-pattern.jpg"
           alt="Pattern"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 5 ? "opacity-20" : "opacity-0"
+            carouselIndex === 6 ? "opacity-20" : "opacity-0"
           }`}
         />
       </div>
@@ -208,7 +230,7 @@ export const Hero = () => {
                 <div className="text-3xl md:text-4xl font-serif font-bold text-primary">
                   {item.value}
                 </div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider mt-1">
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">
                   {item.label}
                 </div>
               </div>
@@ -219,6 +241,7 @@ export const Hero = () => {
               size="lg"
               variant="outline"
               className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-lg px-8 py-6 rounded-full"
+              onClick={() => setOpenDialog(true)}
             >
               View Invitation
             </Button>
@@ -259,6 +282,56 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Invitation Modal */}
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent className="max-w-md mx-auto">
+          <DialogHeader>
+            <DialogTitle className="text-center font-serif text-2xl font-bold text-primary flex items-center justify-center gap-2">
+              Savitri <Heart className="text-red-400" /> Sachin
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 text-center">
+            <p className="text-muted-foreground italic">
+              Together with our families, we invite you to celebrate our union
+            </p>
+            <div className="bg-accent/10 rounded-lg p-4 border">
+              <Calendar className="w-6 h-6 mx-auto mb-2 text-accent" />
+              <p className="font-semibold text-accent">8th February, 2026</p>
+              <p className="text-sm text-muted-foreground">Saturday</p>
+            </div>
+            <div className="bg-card rounded-lg p-4 border border-accent/30">
+              <MapPin className="w-6 h-6 mx-auto mb-2 text-primary" />
+              <p className="font-bold text-primary">Mangala Karyalaya</p>
+              <p className="text-sm text-foreground/90">
+                Vijayapur–Sindagi Road, Sindagi
+                <br />
+                Vijayapur (Bijapur) District, Karnataka – 586128
+              </p>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              "What started as an arrangement became a beautiful journey of
+              companionship."
+            </p>
+            <div className="flex gap-2 pt-4">
+              <Button
+                variant="outline"
+                className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                onClick={() => window.open(GOOGLE_MAPS_URL, "_blank")}
+              >
+                <MapPin className="w-4 h-4 mr-2" />
+                View Map
+              </Button>
+              <Button
+                className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
+                onClick={() => setOpenDialog(false)}
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
