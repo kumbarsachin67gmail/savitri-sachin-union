@@ -5,31 +5,38 @@ const timelineEvents = [
     icon: Users,
     title: "First Meeting",
     date: "January 2024",
-    description: "Our families introduced us, and we met for the first time over tea. Nervous smiles and curious hearts.",
+    description:
+      "Our families introduced us, and we met for the first time over tea. Nervous smiles and curious hearts.",
   },
   {
     icon: Heart,
     title: "Building Connection",
     date: "March - June 2024",
-    description: "Through countless conversations, we discovered shared values, dreams, and a growing respect for each other.",
+    description:
+      "Through countless conversations, we discovered shared values, dreams, and a growing respect for each other.",
   },
   {
     icon: Sparkles,
     title: "Engagement",
     date: "August 2024",
-    description: "With our families' blessings and our hearts aligned, we celebrated our engagement surrounded by loved ones.",
+    description:
+      "With our families' blessings and our hearts aligned, we celebrated our engagement surrounded by loved ones.",
   },
   {
     icon: Calendar,
     title: "The Wedding",
     date: "February 2026",
-    description: "Today we begin our forever, grateful for the journey that brought us here.",
+    description:
+      "Today we begin our forever, grateful for the journey that brought us here.",
   },
 ];
 
 export const OurStory = () => {
   return (
-    <section id="story" className="py-20 bg-gradient-to-b from-background to-cream-dark">
+    <section
+      id="story"
+      className="mt-4 py-20 bg-gradient-to-b from-background to-cream-dark"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-heading">Our Story</h2>
@@ -42,13 +49,19 @@ export const OurStory = () => {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="elegant-card text-center">
             <p className="text-lg leading-relaxed text-foreground/90">
-              Our families blessed us with a year — a year to meet, to understand, and to build trust. 
-              With every conversation, every smile, and every shared dream, we realized this was more than an arrangement.
-              <br /><br />
-              <span className="gold-accent">We became friends first, then partners in heart and mind.</span>
-              <br /><br />
-              Today, we walk together into a new chapter, grateful for the path that brought us here
-              and excited for the journey ahead.
+              Our families blessed us with a year — a year to meet, to
+              understand, and to build trust. With every conversation, every
+              smile, and every shared dream, we realized this was more than an
+              arrangement.
+              <br />
+              <br />
+              <span className="gold-accent">
+                We became friends first, then partners in heart and mind.
+              </span>
+              <br />
+              <br />
+              Today, we walk together into a new chapter, grateful for the path
+              that brought us here and excited for the journey ahead.
             </p>
           </div>
         </div>

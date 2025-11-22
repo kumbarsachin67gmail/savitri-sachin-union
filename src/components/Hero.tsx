@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Heart } from "lucide-react";
+import { Calendar, MapPin, Heart, Music, Pause } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import heroPattern from "@/assets/hero-pattern.jpg";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/dir/17.4479344,78.3803275/W63G%2B66Q+Mangala+Karyalaya,+Vijayapur+-+Sindagi+Rd,+Sindagi,+Karnataka+586128/@17.0923445,76.6679637,9z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3bc6335e4df0a21f:0x3ad5a3af9a3bd84b!2m2!1d76.2254957!2d16.9021113!3e9?entry=ttu&g_ep=EgoyMDI1MTEyMC4xIKXMDSoASAFQAw%3D%3D";
@@ -51,6 +52,9 @@ export const Hero = () => {
 
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [openDialog, setOpenDialog] = useState(false);
+  const [animating, setAnimating] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -80,11 +84,50 @@ export const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    setAnimating(true);
+    const id = setTimeout(() => setAnimating(false), 600);
+    return () => clearTimeout(id);
+  }, [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds]);
+
+  const toggleMusic = () => {
+    if (isPlaying) {
+      audioRef.current?.pause();
+    } else {
+      audioRef.current?.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32"
     >
+      {/* Floating Particles for cinematic effect */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <span className="absolute top-20 left-10 text-red-200 opacity-10 text-2xl animate-float-slow">
+          💖
+        </span>
+        <span className="absolute top-40 right-20 text-pink-200 opacity-5 text-xl animate-float-delay-1">
+          🌸
+        </span>
+        <span className="absolute top-60 left-1/3 text-red-100 opacity-10 text-lg animate-float-delay-2">
+          💝
+        </span>
+        <span className="absolute bottom-40 right-10 text-pink-100 opacity-5 text-2xl animate-float-slow">
+          🌹
+        </span>
+        <span className="absolute top-32 left-2/3 text-red-200 opacity-10 text-lg animate-float-delay-1">
+          ❤️
+        </span>
+        <span className="absolute bottom-60 left-16 text-pink-200 opacity-5 text-xl animate-float-delay-2">
+          💕
+        </span>
+        <span className="absolute top-80 right-32 text-red-100 opacity-10 text-2xl animate-float-slow">
+          💖
+        </span>
+      </div>
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-20"
@@ -172,7 +215,7 @@ export const Hero = () => {
               Savitri
             </motion.span>
             <motion.span
-              className="text-red-400 md:mx-4 drop-shadow-lg"
+              className="text-red-400 md:mx-4 drop-shadow-lg float"
               variants={heartVariant}
               animate="animate"
               style={{ display: "inline-block" }}
@@ -207,13 +250,76 @@ export const Hero = () => {
             .animate-fade-in-up {
               animation: fade-in-up 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
             }
+            @keyframes pop {
+              0% { transform: scale(1); }
+              50% { transform: scale(1.08); }
+              100% { transform: scale(1); }
+            }
+            .animate-pop {
+              animation: pop 0.6s ease-in-out;
+            }
+            @keyframes fadeUp {
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            .fade-up {
+              opacity: 0;
+              transform: translateY(30px);
+              animation: fadeUp 1s ease forwards;
+            }
+            .fade-up-delay-1 {
+              opacity: 0;
+              transform: translateY(30px);
+              animation: fadeUp 1s ease forwards;
+              animation-delay: 0.2s;
+            }
+            .fade-up-delay-2 {
+              opacity: 0;
+              transform: translateY(30px);
+              animation: fadeUp 1s ease forwards;
+              animation-delay: 0.4s;
+            }
+            .fade-up-delay-3 {
+              opacity: 0;
+              transform: translateY(30px);
+              animation: fadeUp 1s ease forwards;
+              animation-delay: 0.6s;
+            }
+            @keyframes float {
+              0% { transform: translateY(0) }
+              50% { transform: translateY(-10px) }
+              100% { transform: translateY(0) }
+            }
+            .float {
+              animation: float 3s ease-in-out infinite;
+            }
+            .animate-float-slow {
+              animation: float 6s ease-in-out infinite;
+            }
+            .animate-float-delay-1 {
+              animation: float 6s ease-in-out infinite 1s;
+            }
+            .animate-float-delay-2 {
+              animation: float 6s ease-in-out infinite 2s;
+            }
           `}</style>
           <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-2xl mx-auto leading-relaxed">
             Together with our families, we invite you to celebrate our union
           </p>
           <p className="text-lg md:text-xl text-muted-foreground italic max-w-2xl mx-auto">
-            "What started as an arrangement became a beautiful journey of
-            companionship."
+            "
+            <Typewriter
+              words={[
+                "What started as an arrangement became a beautiful journey of companionship.",
+              ]}
+              loop={1}
+              cursor
+              cursorStyle="|"
+              typeSpeed={50}
+            />
+            "
           </p>
           {/* Countdown Timer */}
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto mt-12">
@@ -225,7 +331,9 @@ export const Hero = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className="bg-card/80 backdrop-blur-sm rounded-lg p-4 shadow-[var(--shadow-medium)]"
+                className={`bg-card/80 backdrop-blur-sm rounded-lg p-4 shadow-[var(--shadow-medium)] ${
+                  animating ? "animate-pop" : ""
+                }`}
               >
                 <div className="text-3xl md:text-4xl font-serif font-bold text-primary">
                   {item.value}
@@ -240,7 +348,7 @@ export const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-lg px-8 py-6 rounded-full"
+              className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-lg px-8 py-6 rounded-full hover:shadow-xl hover:shadow-accent/40 hover:-translate-y-1 transition-all duration-200"
               onClick={() => setOpenDialog(true)}
             >
               View Invitation
@@ -332,6 +440,21 @@ export const Hero = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Hidden YouTube Audio */}
+      <iframe
+        width="0"
+        height="0"
+        src="https://www.youtube.com/embed/jAEbx-zFV3o?autoplay=1&loop=1&playlist=jAEbx-zFV3o"
+        frameBorder="0"
+        allow="autoplay"
+      ></iframe>
+      {/* Floating Music Button (commented out as music auto-plays) */}
+      {/* <div className="fixed bottom-6 right-6 z-50">
+        <Button className="bg-card text-primary border border-accent hover:bg-accent hover:text-accent-foreground rounded-full w-16 h-16 shadow-lg">
+          <Music size={24} />
+        </Button>
+      </div> */}
     </section>
   );
 };

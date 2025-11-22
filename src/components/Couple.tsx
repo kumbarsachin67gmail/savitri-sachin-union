@@ -1,4 +1,4 @@
-import { User, Briefcase, GraduationCap } from "lucide-react";
+import { User, Briefcase, GraduationCap, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 export const Couple = () => {
@@ -66,8 +66,17 @@ export const Couple = () => {
                 }}
               />
             </div>
-            <h3 className="font-serif text-3xl font-bold text-primary mb-2">
+            <h3 className="font-serif text-3xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
               Sachin
+              <a
+                href="https://sachinkumbar.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+                title="Visit Sachin's Portfolio"
+              >
+                <ExternalLink className="w-5 h-5" />
+              </a>
             </h3>
 
             <div className="space-y-3 mb-4">
