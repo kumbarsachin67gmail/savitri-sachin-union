@@ -102,7 +102,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-24"
     >
       {/* Floating Particles for cinematic effect */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -202,7 +202,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="mt-0 relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8 fade-in-up">
           <div className="h-8" /> {/* Spacer added above the heading */}
           <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary flex flex-col items-center gap-0 md:flex-row md:gap-4 md:items-center md:justify-center">
