@@ -98,14 +98,7 @@ export const Hero = () => {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Button
-              size="lg"
-              onClick={scrollToRSVP}
-              className="bg-primary hover:bg-maroon-dark text-primary-foreground text-lg px-8 py-6 rounded-full shadow-[var(--shadow-gold)]"
-            >
-              RSVP Now
-            </Button>
+          <div className="flex justify-center mt-12">
             <Button
               size="lg"
               variant="outline"
