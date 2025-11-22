@@ -1,6 +1,12 @@
 import { User, Briefcase, GraduationCap } from "lucide-react";
+import { useState } from "react";
 
 export const Couple = () => {
+  const [imageError, setImageError] = useState(false);
+
+  // Image path - add savitri.jpg to public/ folder for the image to display
+  // Files in public/ are served as-is and won't cause build errors if missing
+  const savitriPhotoPath = "/savitri.jpg";
   return (
     <section id="couple" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -15,8 +21,15 @@ export const Couple = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Savitri */}
           <div className="elegant-card text-center group hover:shadow-[var(--shadow-gold)] transition-all duration-300">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <User className="w-16 h-16 text-primary" />
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden ring-4 ring-accent/20 relative">
+              <img
+                src="/Savitri.png"
+                alt="Savitri"
+                className="w-full h-full object-cover rounded-full"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }} // fallback hides img if not found
+              />
             </div>
 
             <h3 className="font-serif text-3xl font-bold text-primary mb-2">
@@ -44,9 +57,15 @@ export const Couple = () => {
           {/* Sachin */}
           <div className="elegant-card text-center group hover:shadow-[var(--shadow-gold)] transition-all duration-300">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <User className="w-16 h-16 text-primary" />
+              <img
+                src="/Sachin.png"
+                alt="Sachin"
+                className="w-full h-full object-cover rounded-full"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
             </div>
-
             <h3 className="font-serif text-3xl font-bold text-primary mb-2">
               Sachin
             </h3>

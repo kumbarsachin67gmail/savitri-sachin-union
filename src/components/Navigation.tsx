@@ -7,7 +7,6 @@ const navItems = [
   { label: "Our Story", href: "#story" },
   { label: "Events", href: "#events" },
   { label: "Gallery", href: "#gallery" },
-  { label: "RSVP", href: "#rsvp" },
   { label: "Travel", href: "#travel" },
   { label: "Wishes", href: "#wishes" },
 ];

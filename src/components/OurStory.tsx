@@ -22,7 +22,7 @@ const timelineEvents = [
   {
     icon: Calendar,
     title: "The Wedding",
-    date: "December 2025",
+    date: "February 2026",
     description: "Today we begin our forever, grateful for the journey that brought us here.",
   },
 ];

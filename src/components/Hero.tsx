@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import heroPattern from "@/assets/hero-pattern.jpg";
+
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/dir/17.4479344,78.3803275/W63G%2B66Q+Mangala+Karyalaya,+Vijayapur+-+Sindagi+Rd,+Sindagi,+Karnataka+586128/@17.0923445,76.6679637,9z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3bc6335e4df0a21f:0x3ad5a3af9a3bd84b!2m2!1d76.2254957!2d16.9021113!3e9?entry=ttu&g_ep=EgoyMDI1MTEyMC4xIKXMDSoASAFQAw%3D%3D";
 
 interface TimeLeft {
   days: number;
@@ -10,8 +13,9 @@ interface TimeLeft {
   seconds: number;
 }
 
+const weddingDate = new Date("2026-02-08T10:00:00");
+
 export const Hero = () => {
-  const weddingDate = new Date("2025-12-15T10:00:00");
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -27,7 +31,9 @@ export const Hero = () => {
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          hours: Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          ),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
         });
@@ -36,10 +42,6 @@ export const Hero = () => {
 
     return () => clearInterval(timer);
   }, []);
-
-  const scrollToRSVP = () => {
-    document.querySelector("#rsvp")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section
@@ -73,7 +75,8 @@ export const Hero = () => {
           </p>
 
           <p className="text-lg md:text-xl text-muted-foreground italic max-w-2xl mx-auto">
-            "What started as an arrangement became a beautiful journey of companionship."
+            "What started as an arrangement became a beautiful journey of
+            companionship."
           </p>
 
           {/* Countdown Timer */}
@@ -101,24 +104,47 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <Button
               size="lg"
-              onClick={scrollToRSVP}
-              className="bg-primary hover:bg-maroon-dark text-primary-foreground text-lg px-8 py-6 rounded-full shadow-[var(--shadow-gold)]"
-            >
-              RSVP Now
-            </Button>
-            <Button
-              size="lg"
               variant="outline"
-              onClick={scrollToRSVP}
               className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-lg px-8 py-6 rounded-full"
             >
               View Invitation
             </Button>
           </div>
 
-          <p className="text-sm text-muted-foreground mt-8">
-            December 15, 2025
-          </p>
+          <div className="mt-8 max-w-xl mx-auto">
+            <div className="bg-card/90 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/30 shadow-[var(--shadow-gold)] ring-2 ring-accent/20 hover:ring-accent/40 transition-all duration-300">
+              <div className="space-y-3">
+                <p className="text-base font-semibold text-accent">
+                  8th February, 2026
+                </p>
+                <p className="text-lg font-bold text-primary">
+                  Mangala Karyalaya
+                </p>
+                <p className="text-sm text-foreground/90 max-w-xl mx-auto leading-relaxed">
+                  Vijayapur–Sindagi Road, Sindagi
+                  <br />
+                  Vijayapur (Bijapur) District, Karnataka – 586128
+                </p>
+                <div className="pt-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                    onClick={() =>
+                      window.open(
+                        GOOGLE_MAPS_URL,
+                        "_blank",
+                        "noopener,noreferrer"
+                      )
+                    }
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    View On Map
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

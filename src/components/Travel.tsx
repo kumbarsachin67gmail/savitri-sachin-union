@@ -21,11 +21,9 @@ export const Travel = () => {
             <h3 className="font-serif text-xl font-bold text-primary mb-3">
               Nearest Airport
             </h3>
-            <p className="text-foreground/80 mb-2">
-              Chhatrapati Shivaji Maharaj International Airport
-            </p>
+            <p className="text-foreground/80 mb-2">Hubli Airport (HBX)</p>
             <p className="text-sm text-muted-foreground">
-              Approximately 25 km from venue
+              Approximately 140 km from Mangala Karyalaya
             </p>
           </div>
 
@@ -37,9 +35,9 @@ export const Travel = () => {
             <h3 className="font-serif text-xl font-bold text-primary mb-3">
               Railway Station
             </h3>
-            <p className="text-foreground/80 mb-2">Mumbai Central Railway Station</p>
+            <p className="text-foreground/80 mb-2">Bijapur Railway Station</p>
             <p className="text-sm text-muted-foreground">
-              Approximately 12 km from venue
+              Approximately 45 km from Mangala Karyalaya
             </p>
           </div>
 
@@ -52,9 +50,11 @@ export const Travel = () => {
               Recommended Hotels
             </h3>
             <div className="space-y-1 text-sm">
-              <p className="text-foreground/80">Hotel Taj Palace</p>
-              <p className="text-foreground/80">Grand Hyatt Mumbai</p>
-              <p className="text-foreground/80">The Oberoi Mumbai</p>
+              <p className="text-foreground/80">
+                Hotels in Vijayapur (Bijapur)
+              </p>
+              <p className="text-foreground/80">Near Mangala Karyalaya</p>
+              <p className="text-foreground/80">Sindagi, Karnataka</p>
             </div>
           </div>
         </div>
@@ -72,9 +72,7 @@ export const Travel = () => {
               <p className="text-foreground/80">
                 For any travel assistance or queries, please contact:
               </p>
-              <p className="text-lg font-medium text-primary">
-                +91 98765 43210
-              </p>
+              <p className="text-lg font-medium text-primary">+91 9481329017</p>
               <p className="text-sm text-muted-foreground">
                 Available 24/7 during the event days
               </p>

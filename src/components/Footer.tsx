@@ -18,7 +18,7 @@ export const Footer = () => {
           <div className="w-24 h-1 bg-accent mx-auto"></div>
 
           <p className="text-sm opacity-75">
-            December 15, 2025 · Mumbai, Maharashtra
+            8th February, 2026 · Mangala Karyalaya, Vijayapur (Bijapur) District, Karnataka
           </p>
 
           <div className="pt-8 border-t border-primary-foreground/20">
