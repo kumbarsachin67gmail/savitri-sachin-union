@@ -62,12 +62,11 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8 fade-in-up">
-          <div className="inline-block mb-4">
-            <Calendar className="w-12 h-12 mx-auto text-accent mb-2" />
-          </div>
-
-          <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary">
-            Savitri <span className="text-accent">❤</span> Sachin
+          <div className="h-8" /> {/* Spacer added above the heading */}
+          <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary flex flex-col items-center gap-0 md:flex-row md:gap-4 md:items-center md:justify-center">
+            <span>Savitri</span>
+            <span className="text-accent md:mx-4">❤</span>
+            <span>Sachin</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-2xl mx-auto leading-relaxed">

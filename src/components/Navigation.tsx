@@ -74,8 +74,8 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden pb-4 animate-fade-in bg-sidebar/95 rounded-xl shadow-lg mt-2">
+            <div className="flex flex-col gap-4 p-4">
               {navItems.map((item) => (
                 <button
                   key={item.href}
