@@ -42,7 +42,7 @@ export const OurStory = () => {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="elegant-card text-center">
             <p className="text-lg leading-relaxed text-foreground/90">
-              Our families gave us a year — a year to meet, understand, and build trust. 
+              Our families blessed us with a year — a year to meet, to understand, and to build trust. 
               With every conversation, every smile, and every shared dream, we realized this was more than an arrangement.
               <br /><br />
               <span className="gold-accent">We became friends first, then partners in heart and mind.</span>
