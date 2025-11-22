@@ -101,7 +101,7 @@ export const Hero = () => {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <div className="flex justify-center mt-12">
             <Button
               size="lg"
               variant="outline"
