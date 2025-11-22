@@ -19,10 +19,20 @@ const weddingDate = new Date("2026-02-08T10:00:00");
 // Animation variants
 const nameVariant = {
   initial: { opacity: 0, y: 30, scale: 0.95, filter: "blur(4px)" },
-  animate: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { duration: 1.2, ease: "easeOut" as const } }
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 1.2, ease: "easeOut" as const },
+  },
 };
 const heartVariant = {
-  animate: { scale: [1, 1.15, 1, 1.1, 1], opacity: [0.8, 1, 0.8, 1, 0.8], transition: { duration: 1.5, repeat: Infinity } }
+  animate: {
+    scale: [1, 1.15, 1, 1.1, 1],
+    opacity: [0.8, 1, 0.8, 1, 0.8],
+    transition: { duration: 1.5, repeat: Infinity },
+  },
 };
 
 export const Hero = () => {
@@ -121,7 +131,7 @@ export const Hero = () => {
           src="/assets/hero-pattern.jpg"
           alt="Pattern"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 5 ? "opacity-10" : "opacity-0"
+            carouselIndex === 5 ? "opacity-20" : "opacity-0"
           }`}
         />
       </div>
@@ -143,7 +153,7 @@ export const Hero = () => {
               className="text-red-400 md:mx-4 drop-shadow-lg"
               variants={heartVariant}
               animate="animate"
-              style={{ display: 'inline-block' }}
+              style={{ display: "inline-block" }}
             >
               ❤
             </motion.span>
@@ -176,16 +186,13 @@ export const Hero = () => {
               animation: fade-in-up 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
             }
           `}</style>
-
           <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-2xl mx-auto leading-relaxed">
             Together with our families, we invite you to celebrate our union
           </p>
-
           <p className="text-lg md:text-xl text-muted-foreground italic max-w-2xl mx-auto">
             "What started as an arrangement became a beautiful journey of
             companionship."
           </p>
-
           {/* Countdown Timer */}
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto mt-12">
             {[
@@ -207,7 +214,6 @@ export const Hero = () => {
               </div>
             ))}
           </div>
-
           <div className="flex justify-center mt-12">
             <Button
               size="lg"
@@ -217,7 +223,6 @@ export const Hero = () => {
               View Invitation
             </Button>
           </div>
-
           <div className="mt-8 max-w-xl mx-auto">
             <div className="bg-card/90 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/30 shadow-[var(--shadow-gold)] ring-2 ring-accent/20 hover:ring-accent/40 transition-all duration-300">
               <div className="space-y-3">
