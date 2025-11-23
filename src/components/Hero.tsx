@@ -440,21 +440,6 @@ export const Hero = () => {
           </div>
         </DialogContent>
       </Dialog>
-
-      {/* Hidden YouTube Audio */}
-      <iframe
-        width="0"
-        height="0"
-        src="https://www.youtube.com/embed/jAEbx-zFV3o?autoplay=1&loop=1&playlist=jAEbx-zFV3o"
-        frameBorder="0"
-        allow="autoplay"
-      ></iframe>
-      {/* Floating Music Button (commented out as music auto-plays) */}
-      {/* <div className="fixed bottom-6 right-6 z-50">
-        <Button className="bg-card text-primary border border-accent hover:bg-accent hover:text-accent-foreground rounded-full w-16 h-16 shadow-lg">
-          <Music size={24} />
-        </Button>
-      </div> */}
     </section>
   );
 };
