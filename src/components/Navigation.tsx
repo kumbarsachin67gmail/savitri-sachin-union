@@ -1,19 +1,59 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Our Story", href: "#story" },
-  { label: "Events", href: "#events" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Travel", href: "#travel" },
-  { label: "Wishes", href: "#wishes" },
-];
+const LanguageToggleButton = () => {
+  const { t, toggleLanguage } = useLanguage();
+
+  return (
+    <button
+      onClick={() => {
+        console.log("Language toggle clicked!");
+        toggleLanguage();
+      }}
+      style={{
+        padding: "6px 12px",
+        fontSize: window.innerWidth < 768 ? "11px" : "12px",
+        backgroundColor: "hsl(var(--accent) / 0.9)",
+        color: "hsl(var(--accent-foreground))",
+        border: "none",
+        borderRadius: "20px",
+        cursor: "pointer",
+        fontWeight: "500",
+        boxShadow:
+          "0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(8px)",
+        transition: "all 0.2s ease-in-out",
+        display: "flex",
+        alignItems: "center",
+        gap: "4px",
+        pointerEvents: "auto",
+        marginRight: "8px",
+      }}
+      onTouchStart={(e) => (e.currentTarget.style.transform = "scale(0.95)")}
+      onTouchEnd={(e) => (e.currentTarget.style.transform = "scale(1)")}
+    >
+      <span>🌍</span>
+      <span>{t.languageName}</span>
+    </button>
+  );
+};
 
 export const Navigation = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: t.navHome, href: "#home" },
+    { label: t.navCouple, href: "#couple" },
+    { label: t.navStory, href: "#story" },
+    { label: t.navEvents, href: "#events" },
+    { label: t.navGallery, href: "#gallery" },
+    { label: t.navTravel, href: "#travel" },
+    { label: t.navWishes, href: "#wishes" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,15 +101,23 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+          {/* Mobile Controls */}
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageToggleButton />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="bg-background/80 hover:bg-accent transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              style={{ zIndex: 1000 }}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

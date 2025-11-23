@@ -10,6 +10,7 @@ import {
 import heroPattern from "@/assets/hero-pattern.jpg";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/dir/17.4479344,78.3803275/W63G%2B66Q+Mangala+Karyalaya,+Vijayapur+-+Sindagi+Rd,+Sindagi,+Karnataka+586128/@17.0923445,76.6679637,9z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3bc6335e4df0a21f:0x3ad5a3af9a3bd84b!2m2!1d76.2254957!2d16.9021113!3e9?entry=ttu&g_ep=EgoyMDI1MTEyMC4xIKXMDSoASAFQAw%3D%3D";
@@ -43,6 +44,8 @@ const heartVariant = {
 };
 
 export const Hero = () => {
+  const { t } = useLanguage();
+
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -306,14 +309,12 @@ export const Hero = () => {
             }
           `}</style>
           <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-2xl mx-auto leading-relaxed">
-            Together with our families, we invite you to celebrate our union
+            {t.heroSubtitle}
           </p>
           <p className="text-lg md:text-xl text-muted-foreground italic max-w-2xl mx-auto">
             "
             <Typewriter
-              words={[
-                "What started as an arrangement became a beautiful journey of companionship.",
-              ]}
+              words={[t.heroTagline]}
               loop={1}
               cursor
               cursorStyle="|"
@@ -351,22 +352,20 @@ export const Hero = () => {
               className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground text-lg px-8 py-6 rounded-full hover:shadow-xl hover:shadow-accent/40 hover:-translate-y-1 transition-all duration-200"
               onClick={() => setOpenDialog(true)}
             >
-              View Invitation
+              {t.viewInvitation}
             </Button>
           </div>
           <div className="mt-8 max-w-xl mx-auto">
             <div className="bg-card/90 backdrop-blur-sm rounded-lg p-6 border-2 border-accent/30 shadow-[var(--shadow-gold)] ring-2 ring-accent/20 hover:ring-accent/40 transition-all duration-300">
               <div className="space-y-3">
                 <p className="text-base font-semibold text-accent">
-                  8th February, 2026
+                  {t.weddingDate}
                 </p>
-                <p className="text-lg font-bold text-primary">
-                  Mangala Karyalaya
-                </p>
+                <p className="text-lg font-bold text-primary">{t.venueName}</p>
                 <p className="text-sm text-foreground/90 max-w-xl mx-auto leading-relaxed">
-                  Vijayapur–Sindagi Road, Sindagi
+                  {t.venueAddress}
                   <br />
-                  Vijayapur (Bijapur) District, Karnataka – 586128
+                  {t.venueAddressLine2}
                 </p>
                 <div className="pt-2">
                   <Button
@@ -382,7 +381,7 @@ export const Hero = () => {
                     }
                   >
                     <MapPin className="w-4 h-4 mr-2" />
-                    View On Map
+                    {t.viewMap}
                   </Button>
                 </div>
               </div>
@@ -396,31 +395,26 @@ export const Hero = () => {
         <DialogContent className="max-w-md mx-auto">
           <DialogHeader>
             <DialogTitle className="text-center font-serif text-2xl font-bold text-primary flex items-center justify-center gap-2">
-              Savitri <Heart className="text-red-400" /> Sachin
+              {t.modalTitle}
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4 text-center">
-            <p className="text-muted-foreground italic">
-              Together with our families, we invite you to celebrate our union
-            </p>
+            <p className="text-muted-foreground italic">{t.modalSubtitle}</p>
             <div className="bg-accent/10 rounded-lg p-4 border">
               <Calendar className="w-6 h-6 mx-auto mb-2 text-accent" />
-              <p className="font-semibold text-accent">8th February, 2026</p>
-              <p className="text-sm text-muted-foreground">Saturday</p>
+              <p className="font-semibold text-accent">{t.weddingDate}</p>
+              <p className="text-sm text-muted-foreground">{t.weddingDay}</p>
             </div>
             <div className="bg-card rounded-lg p-4 border border-accent/30">
               <MapPin className="w-6 h-6 mx-auto mb-2 text-primary" />
-              <p className="font-bold text-primary">Mangala Karyalaya</p>
+              <p className="font-bold text-primary">{t.venueName}</p>
               <p className="text-sm text-foreground/90">
-                Vijayapur–Sindagi Road, Sindagi
+                {t.venueAddress}
                 <br />
-                Vijayapur (Bijapur) District, Karnataka – 586128
+                {t.venueAddressLine2}
               </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              "What started as an arrangement became a beautiful journey of
-              companionship."
-            </p>
+            <p className="text-sm text-muted-foreground">{t.storyQuote}</p>
             <div className="flex gap-2 pt-4">
               <Button
                 variant="outline"
@@ -428,13 +422,13 @@ export const Hero = () => {
                 onClick={() => window.open(GOOGLE_MAPS_URL, "_blank")}
               >
                 <MapPin className="w-4 h-4 mr-2" />
-                View Map
+                {t.viewMap}
               </Button>
               <Button
                 className="flex-1 bg-accent hover:bg-accent/90 text-accent-foreground"
                 onClick={() => setOpenDialog(false)}
               >
-                Close
+                {t.close}
               </Button>
             </div>
           </div>
