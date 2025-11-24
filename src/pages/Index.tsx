@@ -14,9 +14,9 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Couple />
+      <Gallery />
       <OurStory />
       <Events />
-      <Gallery />
       <Travel />
       <Wishes />
       <Footer />
