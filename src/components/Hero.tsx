@@ -80,7 +80,7 @@ export const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const imagesCount = 6;
+    const imagesCount = 14;
     const interval = setInterval(() => {
       setCarouselIndex((prev) => (prev + 1) % imagesCount);
     }, 3000);
@@ -200,6 +200,55 @@ export const Hero = () => {
           alt="Pattern"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
             carouselIndex === 6 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+        {/*     "/image.png",
+    "/image copy 2.png",
+    "/image copy 3.png",
+    "/image copy 4.png",
+    "/image copy 5.png",
+    "/image copy 6.png", */}
+        <img
+          src="/image.png"
+          alt="Sachin Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 7 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+
+        <img
+          src="/image copy 2.png"
+          alt="Sachin Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 8 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+        <img
+          src="/image copy 3.png"
+          alt="Sachin Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 9 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+        <img
+          src="/image copy 4.png"
+          alt="Sachin Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 10 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+        <img
+          src="/image copy 5.png"
+          alt="Sachin Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 11 ? "opacity-20" : "opacity-0"
+          }`}
+        />
+        <img
+          src="/image copy 6.png"
+          alt="Sachin Hero"
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            carouselIndex === 12 ? "opacity-20" : "opacity-0"
           }`}
         />
       </div>
