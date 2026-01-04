@@ -39,7 +39,7 @@ export const Couple = () => {
             <div className="space-y-3 mb-4">
               <div className="flex items-center justify-center gap-2 text-muted-foreground">
                 <GraduationCap className="w-5 h-5 text-accent" />
-                <span>M.Com Graduate</span>
+                <span>Graduate</span>
               </div>
               <div className="flex items-center justify-center gap-2 text-muted-foreground">
                 <Briefcase className="w-5 h-5 text-accent" />
