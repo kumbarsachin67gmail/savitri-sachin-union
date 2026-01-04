@@ -14,7 +14,8 @@ export const Gallery = () => {
 
   // Gallery images from public folder
   const galleryImages = [
-    // "/MASS_1843.JPG",
+    // MASS images (on top)
+    "/MASS_1843.JPG",
     "/MASS_1854.JPG",
     "/MASS_1894.JPG",
     "/MASS_1943.JPG",
@@ -27,7 +28,23 @@ export const Gallery = () => {
     "/MASS_2169.JPG",
     "/MASS_2201.JPG",
     "/MASS_2209.JPG",
-    // Hidden on mobile: MASS_2236.JPG, MASS_2237.JPG, MASS_2259.JPG, MASS_2277.JPG, MASS_2281.JPG, MASS_2282.JPG, MASS_2283.JPG, MASS_2314.JPG, MASS_2337.JPG, MASS_2343.JPG, MASS_2413.JPG, MASS_2453.JPG, MASS_2493.JPG, MASS_2498.JPG, MASS_2558.JPG
+    "/MASS_2236.JPG",
+    "/MASS_2237.JPG",
+    "/MASS_2259.JPG",
+    "/MASS_2277.JPG",
+    "/MASS_2281.JPG",
+    "/MASS_2282.JPG",
+    "/MASS_2283.JPG",
+    "/MASS_2314.JPG",
+    "/MASS_2337.JPG",
+    "/MASS_2343.JPG",
+    "/MASS_2413.JPG",
+    "/MASS_2453.JPG",
+    "/MASS_2493.JPG",
+    "/MASS_2498.JPG",
+    "/MASS_2558.JPG",
+
+    // Other images
     "/image.png",
     "/image copy 2.png",
     "/image copy 3.png",
