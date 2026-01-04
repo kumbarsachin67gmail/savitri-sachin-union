@@ -57,6 +57,7 @@ export const Hero = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [animating, setAnimating] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -80,9 +81,11 @@ export const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const imagesCount = 40;
+    const imagesCount = 35;
     const interval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % imagesCount);
+      if (!isCarouselPaused) {
+        setCarouselIndex((prev) => (prev + 1) % imagesCount);
+      }
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -106,6 +109,8 @@ export const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-24"
+      onMouseEnter={() => setIsCarouselPaused(true)}
+      onMouseLeave={() => setIsCarouselPaused(false)}
     >
       {/* Floating Particles for cinematic effect */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
