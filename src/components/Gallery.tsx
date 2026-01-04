@@ -1,6 +1,44 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
 export const Gallery = () => {
   // Gallery images from public folder
   const galleryImages = [
+    "/MASS_1843.JPG",
+    "/MASS_1854.JPG",
+    "/MASS_1894.JPG",
+    "/MASS_1943.JPG",
+    "/MASS_1982.JPG",
+    "/MASS_1987.JPG",
+    "/MASS_2127.JPG",
+    "/MASS_2132.JPG",
+    "/MASS_2137.JPG",
+    "/MASS_2141.JPG",
+    "/MASS_2169.JPG",
+    "/MASS_2201.JPG",
+    "/MASS_2209.JPG",
+    "/MASS_2236.JPG",
+    "/MASS_2237.JPG",
+    "/MASS_2259.JPG",
+    "/MASS_2277.JPG",
+    "/MASS_2281.JPG",
+    "/MASS_2282.JPG",
+    "/MASS_2283.JPG",
+    "/MASS_2314.JPG",
+    "/MASS_2337.JPG",
+    "/MASS_2343.JPG",
+    "/MASS_2413.JPG",
+    "/MASS_2453.JPG",
+    "/MASS_2493.JPG",
+    "/MASS_2498.JPG",
+    "/MASS_2558.JPG",
+
     "/image.png",
     "/image copy 2.png",
     "/image copy 3.png",
@@ -10,7 +48,7 @@ export const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-background">
+    <section id="gallery" className="py-12 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-heading">Gallery</h2>
@@ -20,20 +58,26 @@ export const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-          {galleryImages.map((imageSrc, index) => (
-            <div
-              key={index}
-              className="rounded-lg overflow-hidden bg-gradient-to-br from-cream-dark to-muted hover:shadow-[var(--shadow-medium)] transition-all duration-300 hover:scale-105 cursor-pointer group"
-            >
-              <img
-                src={imageSrc}
-                alt={`Gallery image ${index + 1}`}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
+        <Carousel
+          className="max-w-4xl mx-auto"
+          plugins={[Autoplay({ delay: 3000 })]}
+        >
+          <CarouselContent>
+            {galleryImages.map((imageSrc, index) => (
+              <CarouselItem key={index} className="basis-full">
+                <div className="rounded-lg overflow-hidden bg-gradient-to-br from-cream-dark to-muted hover:shadow-[var(--shadow-medium)] transition-all duration-300 hover:scale-105 cursor-pointer group mx-auto max-w-md">
+                  <img
+                    src={imageSrc}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
 
         <div className="text-center mt-8">
           <p className="text-sm text-muted-foreground italic">

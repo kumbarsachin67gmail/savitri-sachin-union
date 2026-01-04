@@ -16,7 +16,7 @@ const events = [
   },
   {
     name: "Engagement",
-    date: "August 10, 2024",
+    date: "February 7, 2026",
     time: "6:00 PM onwards",
     venue: "Mangala Karyalaya",
     address:
@@ -25,7 +25,7 @@ const events = [
   },
   {
     name: "Haldi Ceremony",
-    date: "February 6, 2026",
+    date: "February 7, 2026",
     time: "10:00 AM",
     venue: "Mangala Karyalaya",
     address:
@@ -43,7 +43,7 @@ const events = [
   },
   {
     name: "Reception",
-    date: "8th February, 2026",
+    date: "February 7, 2026",
     time: "7:00 PM onwards",
     venue: "Mangala Karyalaya",
     address:
