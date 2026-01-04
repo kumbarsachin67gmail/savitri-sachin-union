@@ -23,7 +23,7 @@ export const Couple = () => {
           <div className="elegant-card text-center group hover:shadow-[var(--shadow-gold)] transition-all duration-300">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 overflow-hidden ring-4 ring-accent/20 relative">
               <img
-                src="/image copy 7.png"
+                src="/Savitri2.png"
                 alt="Savitri"
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
@@ -58,7 +58,7 @@ export const Couple = () => {
           <div className="elegant-card text-center group hover:shadow-[var(--shadow-gold)] transition-all duration-300">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <img
-                src="/Sachin.png"
+                src="/Sachin2.png"
                 alt="Sachin"
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {

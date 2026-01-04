@@ -454,7 +454,7 @@ export const Hero = () => {
               initial="initial"
               animate="animate"
             >
-              Savitri
+              Sachin
             </motion.span>
             <motion.span
               className="text-red-400 md:mx-4 drop-shadow-lg float"
@@ -471,7 +471,7 @@ export const Hero = () => {
               animate="animate"
               transition={{ delay: 0.2 }}
             >
-              Sachin
+              Savitri
             </motion.span>
           </h1>
           {/* Custom Animations for Names */}
