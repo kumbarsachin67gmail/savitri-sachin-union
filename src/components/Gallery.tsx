@@ -2,10 +2,16 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState } from "react";
 
 export const Gallery = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
   // Gallery images from public folder
   const galleryImages = [
     // "/MASS_1843.JPG",
@@ -45,6 +51,19 @@ export const Gallery = () => {
     "/image copy 6.png",
   ];
 
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
   return (
     <section id="gallery" className="py-12 bg-background">
       <div className="container mx-auto px-4">
@@ -57,9 +76,26 @@ export const Gallery = () => {
         </div>
 
         <Carousel
+          setApi={setApi}
           className="max-w-4xl mx-auto"
           plugins={[Autoplay({ delay: 3000 })]}
         >
+          {/* Dots Navigation */}
+          <div className="flex justify-center mb-4 space-x-2">
+            {Array.from({ length: count }, (_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index + 1 === current
+                    ? "bg-accent"
+                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                }`}
+                onClick={() => api?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
           <CarouselContent>
             {galleryImages.map((imageSrc, index) => (
               <CarouselItem key={index} className="basis-full">
