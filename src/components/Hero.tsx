@@ -81,7 +81,7 @@ export const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const imagesCount = 35;
+    const imagesCount = 25;
     const interval = setInterval(() => {
       if (!isCarouselPaused) {
         setCarouselIndex((prev) => (prev + 1) % imagesCount);
@@ -149,7 +149,7 @@ export const Hero = () => {
 
       {/* Carousel Images as background - animated one by one */}
       <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">
-        {/* MASS Images - First priority */}
+        {/* MASS Images - Always shown first */}
         <img
           src="/MASS_1854.JPG"
           alt="Mass Image 1854"
@@ -167,280 +167,166 @@ export const Hero = () => {
         <img
           src="/MASS_1943.JPG"
           alt="Mass Image 1943"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 2 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_1982.JPG"
           alt="Mass Image 1982"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 3 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_1987.JPG"
           alt="Mass Image 1987"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 4 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2127.JPG"
           alt="Mass Image 2127"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 5 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2132.JPG"
           alt="Mass Image 2132"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 6 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2137.JPG"
           alt="Mass Image 2137"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 7 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2141.JPG"
           alt="Mass Image 2141"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 8 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2169.JPG"
           alt="Mass Image 2169"
-          className={`absolute w-full h/full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 9 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2201.JPG"
           alt="Mass Image 2201"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 10 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/MASS_2209.JPG"
           alt="Mass Image 2209"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
             carouselIndex === 11 ? "opacity-20" : "opacity-0"
           }`}
         />
-        <img
-          src="/MASS_2236.JPG"
-          alt="Mass Image 2236"
-          className={`absolute w-full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 12 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2237.JPG"
-          alt="Mass Image 2237"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 13 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2259.JPG"
-          alt="Mass Image 2259"
-          className={`absolute w-full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 14 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2277.JPG"
-          alt="Mass Image 2277"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 15 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2281.JPG"
-          alt="Mass Image 2281"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 16 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2282.JPG"
-          alt="Mass Image 2282"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 17 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2283.JPG"
-          alt="Mass Image 2283"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 18 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2314.JPG"
-          alt="Mass Image 2314"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 19 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2337.JPG"
-          alt="Mass Image 2337"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 20 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2343.JPG"
-          alt="Mass Image 2343"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 21 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2413.JPG"
-          alt="Mass Image 2413"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 22 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2453.JPG"
-          alt="Mass Image 2453"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 23 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2493.JPG"
-          alt="Mass Image 2493"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 24 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2498.JPG"
-          alt="Mass Image 2498"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 25 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        <img
-          src="/MASS_2558.JPG"
-          alt="Mass Image 2558"
-          className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 26 ? "opacity-20" : "opacity-0"
-          }`}
-        />
 
-        {/* Original Images - After MASS images */}
+        {/* Original Images - Responsive display */}
         <img
           src="/Sachin_3_hero.png"
           alt="Sachin 3 Hero"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 md:block lg:hidden ${
-            carouselIndex === 27 ? "opacity-20" : "opacity-0"
+            carouselIndex === 12 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin_5_hero.png"
           alt="Sachin 5 Hero"
           className={`absolute w-full h-full object-cover transition-opacity duration-1000 md:block lg:hidden ${
-            carouselIndex === 28 ? "opacity-20" : "opacity-0"
+            carouselIndex === 13 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin_hero.png"
           alt="Sachin Hero"
           className={`absolute w-full h/full object-cover transition-opacity duration-1000 md:block lg:hidden ${
-            carouselIndex === 29 ? "opacity-20" : "opacity-0"
+            carouselIndex === 14 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin_2_hero.png"
           alt="Sachin 2 Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 30 ? "opacity-20" : "opacity-0"
+            carouselIndex === 15 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin_4_hero.png"
           alt="Sachin 4 Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 31 ? "opacity-20" : "opacity-0"
+            carouselIndex === 16 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/Sachin.png"
           alt="Sachin"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 md:block lg:hidden ${
-            carouselIndex === 32 ? "opacity-20" : "opacity-0"
+            carouselIndex === 17 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/assets/hero-pattern.jpg"
           alt="Pattern"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 33 ? "opacity-20" : "opacity-0"
+            carouselIndex === 18 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/image.png"
           alt="Sachin Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 34 ? "opacity-20" : "opacity-0"
+            carouselIndex === 19 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/image copy 2.png"
           alt="Sachin Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 35 ? "opacity-20" : "opacity-0"
+            carouselIndex === 20 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/image copy 3.png"
           alt="Sachin Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 36 ? "opacity-20" : "opacity-0"
+            carouselIndex === 21 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/image copy 4.png"
           alt="Sachin Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 lg:hidden ${
-            carouselIndex === 37 ? "opacity-20" : "opacity-0"
+            carouselIndex === 22 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/image copy 5.png"
           alt="Sachin Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 38 ? "opacity-20" : "opacity-0"
+            carouselIndex === 23 ? "opacity-20" : "opacity-0"
           }`}
         />
         <img
           src="/image copy 6.png"
           alt="Sachin Hero"
           className={`absolute w/full h/full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 39 ? "opacity-20" : "opacity-0"
+            carouselIndex === 24 ? "opacity-20" : "opacity-0"
           }`}
         />
-        {/* Commented out Savitri image
-        <img
-          src="/Savitri.png"
-          alt="Savitri"
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-            carouselIndex === 41 ? "opacity-20" : "opacity-0"
-          }`}
-        />
-        */}
       </div>
 
       {/* Content */}
