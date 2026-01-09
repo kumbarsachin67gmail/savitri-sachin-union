@@ -15,7 +15,7 @@ export const Gallery = () => {
   // Gallery images from public folder
   const galleryImages = [
     // MASS images (on top)
-    "/MASS_1843.JPG",
+    // "/MASS_1843.JPG",
     "/MASS_1854.JPG",
     "/MASS_1894.JPG",
     "/MASS_1943.JPG",
